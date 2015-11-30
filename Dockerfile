@@ -14,6 +14,8 @@ RUN ansible-playbook -i "localhost," -c local /etc/ansible/site.yml
 
 RUN apt-get -y remove ansible python-apt;apt-get -y autoremove
 
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
