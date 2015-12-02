@@ -11,7 +11,7 @@ Build image with:
 docker build -t flask:ubuntu14.04 .
 ```
 
-After creating your flask app mount it under /var/www/flaskapp/flaskapp. Then create docker container with:
+After creating your flask app in /some/place mount it under /var/www/flaskapp/flaskapp creating the container this way:
 ```
-docker create --name flaskapp --hostname flaskapp -p 80:80 -v /tmp/flaskapp:/var/www/flaskapp/flaskapp flask:ubuntu14.04
+docker create --name flaskapp --hostname flaskapp -p 80:80 -v /some/place:/var/www/flaskapp/flaskapp flask:ubuntu14.04
 ```
